@@ -12,22 +12,25 @@ int pointsToMake = points;
 pthread_mutex_t lock;
 
 void* monteCarloEstimation(void* arg){
-	
-	pthread_mutex_lock(&lock);
+	int localCircleCount = 0;
+	int iterations = (int) arg;
 	double x,y;
-	for(int i = 0; i < points && pointsToMake > 0; i++, pointsToMake--){
+	for(int i = 0; i < iterations; i++){
 
 		x = (double)(rand()%10000)/10000;
 		y = (double)(rand()%10000)/10000;
 		if((x*x + y*y)<1){
-			pointsInCircle++;
+			localCircleCount++;
+		
 		}
-
+		
 
 	}
+	pthread_mutex_lock(&lock);
+	pointsInCircle += localCircleCount;
 	pthread_mutex_unlock(&lock);
 
-
+	pthread_exit(NULL);
 }
 
 int main(int argc, char* argv[]){
@@ -50,7 +53,7 @@ int main(int argc, char* argv[]){
 	int err;
 
 	while(i < threadNum) {
-        	err = pthread_create(&(threads[i]), NULL, &monteCarloEstimation, NULL);
+        	err = pthread_create(&(threads[i]), NULL, &monteCarloEstimation, (void*) (points/threadNum));
             	if (err != 0)
                 	printf("\ncan't create thread :[%s]", strerror(err));
                 i++;
