@@ -3,7 +3,7 @@
 
 Matrix Multiplication using OpenMP
 
-Matrix sizes = N x N; N = 500
+Matrix sizes = N x N; N = 700
 
 To compile: gcc MatMult.c -o MatMult -fopenmp
 
