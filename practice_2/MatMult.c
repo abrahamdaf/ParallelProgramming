@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
-#define N 500
+#define N 700
 void multMatrix( int rows1, int cols1, int rows2, int cols2, int mat1[rows1][cols1], int mat2[rows2][cols2], int sol[rows1][cols2], int threads){
     int i, j;
     #pragma omp parallel for collapse(2) num_threads(threads) private(i,j)
