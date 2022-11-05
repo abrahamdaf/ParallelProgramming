@@ -7,7 +7,7 @@ Matrix sizes = N x N; N = 500
 
 To compile: gcc MatMult.c -o MatMult -fopenmp
 
-To execute ./MatMult <Number of threads>
+To execute ./MatMult \<Number of threads\>
 
 An argument is required to run the program.
 
