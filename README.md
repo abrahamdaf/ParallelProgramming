@@ -6,4 +6,4 @@ pi_calculation: Pi aproximation through the Montecarlo method using a multithrea
 ### Practice 2:
 MatMult: Parallel matrix multiplication using the OpenMP library to parallelize the process
 ### Practice 3:
-TBD
+HeatEq: 2D Heat calculation using openMP and the finite difference method while reading from a csv with pthreads
