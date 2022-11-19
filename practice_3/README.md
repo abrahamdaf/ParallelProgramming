@@ -15,7 +15,7 @@ Runtimes when running with 1,2,4,8,16,100 threads
 
 <img src="https://github.com/abrahamdaf/parallel-programming-ITESM/blob/main/practice_3/visualResources/CPU%20usage%20graph.png" width="600">
 
-CPU usage graph and process list when using 4 threads
+CPU usage graph and process list when using 100 threads
 
 ## Conclusions
 
